@@ -1,4 +1,3 @@
-# Fuzzy-Rule-Based-System
 # Fuzzy Rule-Based System
 
 Questo repository implementa un sistema fuzzy basato su regole per l'analisi e l'inferenza di variabili linguistiche. Il sistema è sviluppato in Python e consente di:
