@@ -20,21 +20,23 @@ Questo repository implementa un sistema fuzzy basato su regole per l'analisi e l
   Fornisce un'interfaccia per:
   - Aggiungere variabili linguistiche.
   - Fuzzificare i valori in ingresso.
-  - Pulire (clean) i risultati della fuzzificazione per considerare il massimo grado di appartenenza.
+  - **Switch Condition**: Durante la fuzzificazione, il parametro `switch` (impostato di default a `True`) determina se eseguire una "pulizia" dei risultati:
+    - Se `switch` è **True**, dopo aver calcolato i gradi di appartenenza viene chiamato il metodo `clean`, che conserva soltanto il valore massimo per ogni variabile, azzerando gli altri. Questa operazione assicura che venga considerata solo la regola con il grado di attivazione più elevato.
+    - Se `switch` è **False**, la procedura di cleaning viene saltata e vengono mantenuti tutti i valori fuzzy calcolati.
 
 ## Funzionamento
 
 1. **Definizione delle Variabili Linguistiche**:  
-   Le variabili come 'speed' o 'fuel' sono definite con etichette (es. 'VERY FAST', 'LOW CONSUME') e parametri per le funzioni di appartenenza (es. `[70, 110, 130]` per funzioni triangolari).
+   Le variabili come `speed` o `fuel` sono definite con etichette (es. 'VERY FAST', 'LOW CONSUME') e parametri per le funzioni di appartenenza (es. `[70, 110, 130]` per funzioni triangolari).
 
 2. **Fuzzificazione**:  
-   Con `FuzzyInterface.fuzzify`, un valore numerico viene convertito nei relativi gradi di appartenenza per ciascuna etichetta della variabile definita.
+   Con `FuzzyInterface.fuzzify`, un valore numerico viene convertito nei relativi gradi di appartenenza per ciascuna etichetta della variabile definita. Il parametro `switch` controlla se, dopo la fuzzificazione, deve essere eseguita la pulizia dei risultati, mantenendo soltanto il valore massimo per ogni qualità.
 
 3. **Applicazione delle Regole**:  
    La classe `Rulebase` applica le regole definite tramite `setcondition` per valutare i gradi di appartenenza e associare output linguistici (es. 'HIGH COST', 'MEDIUM COST').
 
 4. **Defuzzificazione**:  
-   Attraverso `defuzzify`, il valore fuzzy viene convertito in un valore crisp, calcolato mediamente (ad es., media dei valori ottenuti per il lato sinistro e destro della funzione di appartenenza).
+   Attraverso `defuzzify`, il valore fuzzy viene convertito in un valore crisp, calcolato mediamente (ad esempio, come media dei valori ottenuti dai lati sinistro e destro della funzione di appartenenza).
 
 ## Esempio d'Uso
 
