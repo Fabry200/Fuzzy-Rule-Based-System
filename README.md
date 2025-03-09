@@ -33,9 +33,13 @@ Questo repository implementa un sistema fuzzy basato su regole per l'analisi e l
    Con `FuzzyInterface.fuzzify`, un valore numerico viene convertito nei relativi gradi di appartenenza per ciascuna etichetta della variabile definita. Il parametro `switch` controlla se, dopo la fuzzificazione, deve essere eseguita la pulizia dei risultati, mantenendo soltanto il valore massimo per ogni qualità.
 
 3. **Applicazione delle Regole**:  
-   La classe `Rulebase` applica le regole definite tramite `setcondition` per valutare i gradi di appartenenza e associare output linguistici (es. 'HIGH COST', 'MEDIUM COST').
+   La classe `Rulebase` applica le regole definite tramite `setcondition` per valutare i gradi di appartenenza e associare output linguistici (es. 'HIGH COST', 'MEDIUM COST'). si e' scelto
+   di utilizzare funzioni lambda il cui output puo' essere un valore di appartenza come anche il minimo nel caso di operatore AND o il massimo in caso di operatore OR
+   ## Esempi di Impostazione delle Regole
 
-4. **Defuzzificazione**:  
+
+
+5. **Defuzzificazione**:  
    Attraverso `defuzzify`, il valore fuzzy viene convertito in un valore crisp, calcolato mediamente (ad esempio, come media dei valori ottenuti dai lati sinistro e destro della funzione di appartenenza).
 
 ## Esempio d'Uso
