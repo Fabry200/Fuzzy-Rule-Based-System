@@ -34,12 +34,9 @@ Questo repository implementa un sistema fuzzy basato su regole per l'analisi e l
 
 3. **Applicazione delle Regole**:  
    La classe `Rulebase` applica le regole definite tramite `setcondition` per valutare i gradi di appartenenza e associare output linguistici (es. 'HIGH COST', 'MEDIUM COST'). si e' scelto
-   di utilizzare funzioni lambda il cui output puo' essere un valore di appartenza come anche il minimo nel caso di operatore AND o il massimo in caso di operatore OR
-   ## Esempi di Impostazione delle Regole
+   di utilizzare funzioni lambda il cui output puo' essere un valore di appartenza come anche il minimo nel caso di operatore AND o il massimo in caso di operatore O
 
-
-
-5. **Defuzzificazione**:  
+4. **Defuzzificazione**:  
    Attraverso `defuzzify`, il valore fuzzy viene convertito in un valore crisp, calcolato mediamente (ad esempio, come media dei valori ottenuti dai lati sinistro e destro della funzione di appartenenza).
 
 ## Esempio d'Uso
