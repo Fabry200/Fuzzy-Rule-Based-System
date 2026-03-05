@@ -39,13 +39,3 @@ Questo repository implementa un sistema fuzzy basato su regole per l'analisi e l
 4. **Defuzzificazione**:  
    Attraverso `defuzzify`, il valore fuzzy viene convertito in un valore crisp, calcolato mediamente (ad esempio, come media dei valori ottenuti dai lati sinistro e destro della funzione di appartenenza).
 
-## Esempio d'Uso
-
-Nel `main()` viene mostrato un esempio pratico:
-- Vengono definite variabili linguistiche per **velocità** e **consumo di carburante**.
-- Vengono impostate regole che collegano la velocità e il consumo a differenti livelli di **costo**.
-- Infine, il sistema fuzzifica i valori di input, applica le regole e defuzzifica il risultato per ottenere una stima del costo.
-
----
-
-Questo approccio modulare permette di estendere facilmente il sistema per includere ulteriori variabili e regole, rendendo il tool versatile per applicazioni basate su logica fuzzy.
